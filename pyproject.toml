@@ -1,0 +1,26 @@
+[project]
+name = "data-science-playground"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Bernardo António Borda d'Água", email = "berna.agua@protonmail.com" },
+]
+requires-python = ">=3.14"
+dependencies = ["numpy>=2.4.2", "torch>=2.10.0"]
+
+[project.scripts]
+data-science-playground = "data_science_playground:main"
+
+[build-system]
+requires = ["uv_build>=0.10.2,<0.11.0"]
+build-backend = "uv_build"
+
+[tool.ruff.lint]
+select = [
+    "ANN", # Enforce that type annotations are present
+]
+
+[tool.ruff.lint.flake8-annotations]
+allow-star-arg-any = true
+ignore-fully-untyped = false # Set to false to force hints everywhere
